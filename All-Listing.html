@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Listings</title>
+    <link rel="icon" type="image/png" href="./assets/images/big logo.png">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/All_Listing.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+
+<body>
+
+    <div class="loader"></div>
+
+    <div class="header">
+
+        <nav class="navbar navbar-expand-lg bg-transparent back">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/images/logo.png" class="img-fluid" height="40" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto gap-3">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="All-Listing.html">Listings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html #team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Pages
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-3 flex-wrap">
+                        <div class="d-flex align-items-center gap-2 phone">
+                            <img src="./assets/images/nav/phone.png" class="img-fluid" width="25px" />
+                            <span class="text-white">+68 685 88666</span>
+                        </div>
+                        <div>
+                            <img src="./assets/images/nav/person.png" class="img-fluid person" width="35px" />
+                        </div>
+                        <div class="border border-white rounded-pill px-3 py-2 text-white property">
+                            <span>Add Property</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+
+
+    <div class="container py-5">
+
+        <div id="property-list" class="hidden">
+        </div>
+    </div>
+
+    <footer>
+        <div class="big-footer container">
+            <div class="top-footer d-flex flex-wrap justify-content-between">
+                <div class="img">
+                    <img src="./assets/images/logo.png" class="py-3" />
+                </div>
+                <span class="small-footer py-4 text-center">Copyright © 2024. JustHome</span>
+                <div class="follow">
+                    <span>followus</span>
+                    <div class="d-flex i">
+                        <a href="https://www.facebook.com" target="_blank"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.x.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // List of properties
+        const properties = [
+            {
+                title: "Luxury Family Home",
+                location: "1800-1818 79th St",
+                price: "$395,000",
+                image: "./assets/images/Featured/p1.png",
+                type: "For Sale",
+                beds: 4,
+                baths: 1,
+                size: 400
+            },
+            {
+                title: "Skyper Pool Apartment",
+                location: "1020 Bloomingdale Ave",
+                price: "$280,000",
+                image: "./assets/images/Featured/p2.png",
+                type: "For Sale",
+                beds: 4,
+                baths: 2,
+                size: 450
+            },
+            {
+                title: "North Dillard Street",
+                location: "4330 Bell Shoals Rd",
+                price: "$250/month",
+                image: "./assets/images/Featured/p3.png",
+                type: "For Rent",
+                beds: 4,
+                baths: 2,
+                size: 400
+            },
+            {
+                title: "Eaton Garth Penthouse",
+                location: "7722 18th Ave, Brooklyn",
+                price: "$180,000",
+                image: "./assets/images/Featured/p4.png",
+                type: "For Sale",
+                beds: 4,
+                baths: 2,
+                size: 450
+            },
+            {
+                title: "New Apartment Nice View",
+                location: "42 Avenue O, Brooklyn",
+                price: "$850/month",
+                image: "./assets/images/Featured/p5.png",
+                type: "For Rent",
+                beds: 4,
+                baths: 1,
+                size: 460
+            },
+            {
+                title: "Diamond Manor Apartment",
+                location: "7802 20th Ave, Brooklyn",
+                price: "$259,000",
+                image: "./assets/images/Featured/p6.png",
+                type: "For Sale",
+                beds: 4,
+                baths: 2,
+                size: 500
+            }
+        ];
+
+
+        //display properties
+        function displayProperties() {
+            const propertyList = document.getElementById('property-list');
+            properties.forEach(property => {
+                const propertyItem = document.createElement('div');
+                propertyItem.classList.add('property-item');
+
+                propertyItem.innerHTML = `
+                <div class="property-image hidden">
+                    <img src="${property.image}" alt="${property.title}">
+                </div>
+                <div class="property-details hidden">
+                    <h5>${property.title}</h5>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> ${property.location}
+                    </div>
+                    <div class="price">${property.price}</div>
+                    <div class="details">
+                        <span class="bed"><i class="fas fa-bed"></i> ${property.beds} Beds</span>
+                        <span class="bath"><i class="fas fa-bath"></i> ${property.baths} Baths</span>
+                        <span class="size"><i class="fas fa-ruler-combined"></i> ${property.size} sqft</span>
+                    </div>
+                    <span class="badge">${property.type}</span>
+                </div>
+            `;
+
+                propertyList.appendChild(propertyItem);
+            });
+        }
+
+        // الاظهار اول ما تيجي الصفحة
+        displayProperties();
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
+
+        //loader
+        window.onload = function () {
+            let loader = document.querySelector(".loader");
+
+            loader.style.display = "none";
+        };
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
